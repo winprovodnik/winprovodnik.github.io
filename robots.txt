@@ -1,0 +1,10 @@
+# Разрешаем всем поисковым роботам сканирование
+User-agent: *
+Allow: /
+
+# Указываем путь к карте сайта
+Sitemap: https://winprovodnik.github.io/sitemap.xml
+
+# Запрещаем сканировать пустые или служебные страницы (если они появятся)
+# Disallow: /cgi-bin/
+# Disallow: /temp/
