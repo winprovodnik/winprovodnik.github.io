@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Windows 10 — Проводник</title>
+  <link rel="icon" href="icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-top: -3px;
+    }
+
+    .name {
+      font-family: Arial;
+    }
+
+    .navigation {
+      background-color: #ddd;
+      width: 100%;
+      padding: 2px 5px;
+      font-family: Arial;
+    }
+
+    .navigation a {
+      color: #333;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .navigation a:hover {
+      text-decoration: underline;
+    }
+
+    .site {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 5px 15px;
+    }
+
+    .hr {
+      border: none;
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    .info {
+      background-color: #ffc;
+      padding: 10px;
+      border: 1px solid #cc9;
+      margin: 15px 20px;
+    }
+
+    .OS {
+      display: flex;
+      align-items: center;
+      margin: 15px 20px;
+      gap: 10px;
+    }
+
+    .OS img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .OS h2 {
+      font-family: Arial;
+      font-size: 1.5rem;
+    }
+
+    .web {
+      margin: 15px 20px;
+    }
+
+    .table {
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 500px;
+      max-width: 900px;
+    }
+
+    th {
+      padding: 8px 5px;
+      text-align: left;
+      border: 1px solid #aaa;
+      background-color: #0078d7;
+    }
+
+    td {
+      padding: 8px 7px;
+      border: 1px solid #ccc;
+      background-color: whitesmoke;
+    }
+
+    tr:hover {
+      background-color: #ffd;
+    }
+
+    .iso {
+      margin: 15px 20px;
+    }
+
+    .opis {
+      font-family: 'Courier New', Courier, monospace;
+      background: #f9f9f9;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border-left: 3px solid #cc9;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
+    h4 {
+      background-color: #ffa;
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 1rem;
+      margin: 15px 0 5px 0;
+      width: 40%;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid #aaa;
+      padding: 2px 6px;
+      font-family: monospace;
+      font-size: 0.65rem;
+      cursor: pointer;
+      margin-left: 8px;
+      border-radius: 3px;
+      color: #333;
+    }
+
+    .copy-btn:hover {
+      background: #eee;
+    }
+
+    .hash-item {
+      margin: 4px 0;
+    }
+
+    .screenshots {
+      margin: 20px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+
+    .screenshots h3 {
+      background: #eee;
+      padding: 8px 12px;
+      margin: 0;
+      font-family: Arial;
+      font-size: 14px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .screenshots-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .mct-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mct-icon {
+      height: 24px;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    .screenshot {
+      flex: 1 1 200px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .screenshot img {
+      max-width: 100%;
+      height: auto;
+      background: #e0e0e0;
+    }
+
+    .screenshot span {
+      display: block;
+      margin-top: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .hash-cell {
+      cursor: pointer;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .hash-cell:hover {
+      text-decoration: none;
+    }
+
+    .footer {
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #ddd;
+      padding-bottom: 4px;
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .site {
+        flex-direction: column;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .down {
+        background-color: #cc9;
+        text-decoration: none;
+        color: #333;
+        padding: 3px;
+      }
+      .logo {
+        margin-bottom: 5px;
+      }
+      .name {
+        font-size: 22px;
+      }
+      .info {
+        margin: 10px;
+        font-size: 12px;
+        text-align: center;
+      }
+      .OS {
+        flex-direction: column;
+        text-align: center;
+        margin: 10px;
+      }
+      .web {
+        margin: 10px;
+      }
+      .iso {
+        margin: 10px;
+      }
+      .opis {
+        font-size: 0.75rem;
+      }
+      h4 {
+        font-size: 0.85rem;
+        display: block;
+      }
+      .screenshots {
+        margin: 10px;
+      }
+      .screenshots-grid {
+        flex-direction: column;
+      }
+      .footer {
+        font-size: 10px;
+      }
+      .navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        padding: 5px;
+      }
+      .navigation a {
+        font-size: 13px;
+        padding: 5px 8px;
+        background-color: #cc9;
+      }
+      .navigation a:hover {
+        background-color: rgb(236, 190, 50);
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 945px) {
+      h4 {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 538px) {
+      h4 {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .table {
+        font-size: 11px;
+      }
+      th, td {
+        padding: 6px 5px;
+      }
+      .opis {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="navigation">
+  <a href="index.html">Главная</a>
+  <a href="obnova.html">Изменения</a> 
+  <a href="about.html">О проекте</a>
+</div>
+
+<div class="site">
+  <img class="logo" src="icon.png" alt="Логотип">
+  <h1 class="name">Проводник</h1>
+</div>
+<hr class="hr">
+
+<div class="info">
+  ⚠️Образ получен через официальный Media Creation Tool от Microsoft. Хеш-сумма соответствует файлу, загруженному на Google Диск. <br>При скачивании образа в другое время хеш может отличаться из-за обновлений Microsoft.
+</div>
+
+<div class="OS">
+  <img src="img/10.png" alt="Windows 10">
+  <h2>Windows 10 Russian</h2>
+</div>
+
+<div class="web">
+  <div class="table">
+    <table>
+      <thead><tr><th>Имя файла</th><th>Размер</th><th>Дата</th><th>SHA256</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="https://drive.google.com/file/d/1WeekH-BhEHNTz2x_VHLcAabGrQ-hDsSp/view?usp=drive_link">💿 windows 10 x64/</a></td>
+          <td>4.39 ГБ</td><td>24.03.2026</td><td class="hash-cell" data-full="fc38be92c4a76c0888ca96822ece6c667c5668dc7ce64e4373e75db93d37a7ec">
+  fc38be92...
+  </td>
+        </tr>
+        <tr>
+          <td><a href="https://drive.google.com/file/d/1j9TqpPr3FBucGK10575GUspdCm1pP5ZB/view?usp=drive_link">💿 windows 10 x86/</a></td>
+          <td>3.16 ГБ</td><td>24.03.2026</td><td class="hash-cell" data-full="bab911c971a06640230e34ede21a4261e1876c5bea4a059e9d2edd39bcfecf5b">
+        bab911c9...
+      </td>
+        </tr>
+        <tr>
+          <td><a href="MediaCreationTool_22H2.exe"><div class="mct-row">
+            <img class="mct-icon" src="img/mct22h2.png" alt="MCT"><a href="MediaCreationTool_22H2.exe">MediaCreationTool_22H2.exe</a></div></a></td>
+          <td>18,5 МБ</td><td>22.04.2026</td><td class="hash-cell" data-full="690c8a63769d444fad47b7ddecee7f24c9333aa735d0bd46587d0df5cf15cde5">
+            690c8a63...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="hr">
+
+<div class="iso">
+  <h4>💿 Windows 10 (x64) — Pro/Home/Education</h4>
+  <div class="opis">
+    <div class="hash-item">📄 File: Windows 10 x64.iso</div>
+    <div class="hash-item">🔐 SHA256: fc38be92c4a76c0888ca96822ece6c667c5668dc7ce64e4373e75db93d37a7ec <button class="copy-btn" data-hash="fc38be92c4a76c0888ca96822ece6c667c5668dc7ce64e4373e75db93d37a7ec">Копировать</button></div>
+    <div class="hash-item">💾 Size: 4.39 ГБ</div>
+    <div class="hash-item">🏷️ TAG: windows 10 64 бит, русский оригинал, Media Creation Tool</div>
+    <div class="hash-item"><a class="down" href="https://drive.google.com/file/d/1WeekH-BhEHNTz2x_VHLcAabGrQ-hDsSp/view?usp=drive_link">Скачать ISO</a></div>
+  </div>
+
+  <h4>💿 Windows 10 (x86) — Pro/Home/Education</h4>
+  <div class="opis">
+    <div class="hash-item">📄 File: Windows 10 x86.iso</div>
+    <div class="hash-item">🔐 SHA256: bab911c971a06640230e34ede21a4261e1876c5bea4a059e9d2edd39bcfecf5b <button class="copy-btn" data-hash="bab911c971a06640230e34ede21a4261e1876c5bea4a059e9d2edd39bcfecf5b">Копировать</button></div>
+    <div class="hash-item">💾 Size: 3.16 ГБ</div>
+    <div class="hash-item">🏷️ TAG: windows 10 32 бит, русский оригинал, Media Creation Tool</div>
+    <div class="hash-item"><a class="down" href="https://drive.google.com/file/d/1j9TqpPr3FBucGK10575GUspdCm1pP5ZB/view?usp=drive_link">Скачать ISO</a></div>
+  </div>
+
+  <h4><img class="mct-icon" src="img/mct22h2.png" alt="MCT">MediaCreationTool_22H2.exe</h4>
+  <div class="opis">
+    <div class="hash-item">📄 File: Windows 10 x64.iso</div>
+    <div class="hash-item">🔐 SHA256: fc38be92c4a76c0888ca96822ece6c667c5668dc7ce64e4373e75db93d37a7ec <button class="copy-btn" data-hash="fc38be92c4a76c0888ca96822ece6c667c5668dc7ce64e4373e75db93d37a7ec">Копировать</button></div>
+    <div class="hash-item">💾 Size: 4.39 ГБ</div>
+    <div class="hash-item">🏷️ TAG: windows 10 64 бит, русский оригинал, Media Creation Tool</div>
+    <div class="hash-item"><a class="down" href="MediaCreationTool_22H2.exe">Скачать ISO</a></div>
+  </div>
+</div>
+
+
+<div class="screenshots">
+  <h3>📸 Скриншоты</h3>
+  <div class="screenshots-grid">
+    <div class="screenshot"><img src="img/win10.png" alt="Скриншот 1"><span>win10.png</span></div>
+    <div class="screenshot"><img src="img/win10_3.jpg" alt="Скриншот 2"><span>win10_3.jpg</span></div>
+    <div class="screenshot"><img src="img/img0.jpg" alt="Скриншот 3"><span>img0.jpg</span></div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>GitHub Server at winprovodnik.github.io</span><br>
+  <span>© 2026 Проводник. Все права защищены.</span><br>
+  <a href="index.html">Главная</a> | <a href="privacy.html">Политика конфиденциальности</a> | <a href="about.html">О проекте</a> | <a href="obnova.html">История изменений</a>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const hash = this.getAttribute('data-hash');
+      if (!hash) return;
+      navigator.clipboard.writeText(hash).then(() => {
+        const originalText = this.innerText;
+        this.innerText = '✓';
+        setTimeout(() => {
+          this.innerText = originalText;
+        }, 1500);
+      });
+    });
+  });
+
+  document.querySelectorAll('.hash-cell').forEach(cell => {
+  cell.addEventListener('click', async () => {
+    const fullHash = cell.getAttribute('data-full');
+    if (!fullHash) return;
+    
+    await navigator.clipboard.writeText(fullHash);
+    const originalText = cell.innerText;
+    cell.innerText = 'скопировано';
+    setTimeout(() => {
+      cell.innerText = originalText;
+    }, 1500);
+  });
+});
+</script>
+
+</body>
+</html>
