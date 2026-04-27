@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://winprovodnik.github.io/sitemap.xml
-
-# Disallow: /cgi-bin/
-# Disallow: /temp/
