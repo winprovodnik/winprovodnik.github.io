@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Как проверить хеш-сумму — Проводник</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .code-block {
+  background: #f5f5f5;
+  border-left: 3px solid #cc9;
+  padding: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+/* Жёлтое предупреждение (как info, но для важных заметок) */
+.note {
+  background: #fff3cd;
+  border-left: 3px solid #ffc107;
+  padding: 10px 15px;
+  margin: 15px 0;
+  font-size: 0.85rem;
+}
+
+/* Таблица с программами */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+  background-color: whitesmoke;
+}
+
+th {
+  background-color: #ddd;
+}
+
+.container {
+  margin-left: 2%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .body {
+    color: #ffffff;
+  }
+
+  small {
+    color: #ffffff;
+  }
+
+
+  .navigation, .footer {
+    background: #2a2a2a;
+  }
+
+  .code-block {
+    background-color: #2a2a2a;
+  }
+}
+  </style>
+</head>
+<body>
+ <div class="navigation">
+  <a href="index.html"><small>Главная</small></a>
+  <a href="obnova.html"><small>Изменения</small></a> 
+  <a href="about.html"><small>О проекте</small></a>
+ </div>
+ <div class="site">
+  <img class="logo" src="icon.png" alt="Логотип">
+  <h1 class="name">Проводник</h1>
+ </div>
+<hr class="hr">
+ <div class="info">
+  Контрольные суммы (SHA-256, SHA-1, MD5) — это «отпечатки пальцев» файлов. Если хеш совпадает, файл оригинальный и не повреждён.
+</div>
+<div class="container">
+ <h4>Windows — PowerShell (рекомендуемый способ)</h4>
+  
+  <p>1. Нажмите Win + R, введите <code>powershell</code>, нажмите Enter</p>
+  <img src="img/powershell.PNG" alt="powershell Windows" style="margin-top: 10px; margin-bottom: 10px;">
+  <p>2. В новом окне вставьте команду, заменив путь к своему ISO. Снова нажмите Enter и немного подождите</p>
+  <div class="code-block">
+    <code>Get-FileHash -Path "C:\путь\к\файлу.iso" -Algorithm SHA256</code><button class="copy-btn" data-hash='Get-FileHash -Path "C:\путь\к\файлу.iso" -Algorithm SHA256'>Копировать</button>
+  </div>
+  <img src="img/winpowershell.PNG" style="max-width: 900px;">
+   <small><br>Тот самый набор цифр и букв 2FE16C42F... -- хеш-сумма файла. В интернете можно будет найти оригинальные хеши<br> нужного файла и сравнить с вашими</small>
+ <br><h4 style="margin-top: 10px;">Windows - cmd (если возникли проблемы с powershell)</h4>
+  <p>1. Нажмите Win + R, введите <code>cmd</code>, нажмите Enter</p>
+  <img src="img/cmd.PNG" alt="Windows cmd" style="margin-top: 10px; margin-bottom: 10px;">
+  <p>2. Всё тоже самое, что и в powershell, только команда чутка отличается</p>
+    <div class="code-block">
+    <code>certutil -hashfile "C:\путь\к\файлу.iso" SHA256</code><button class="copy-btn" data-hash='certutil -hashfile "C:\путь\к\файлу.iso" SHA256'>Копировать</button>
+  </div>
+  <img src="img/wincmd.PNG" alt="Командная строка Windows cmd" style="max-width: 900px;">
+</div>
+<div class="footer">
+  <span>© 2026 Проводник. Все права защищены.</span><br>
+  <a href="index.html">Главная</a> | <a href="privacy.html">Политика конфиденциальности</a> | <a href="about.html">О проекте</a> | <a href="obnova.html">История изменений</a>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
