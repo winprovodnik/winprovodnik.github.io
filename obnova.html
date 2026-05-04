@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>История изменений — Проводник</title>
+  <link rel="icon" href="icon.png">
+  <meta name="description" content="Полная история изменений сайта Проводник — новые образы, обновления, исправления.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-top: -3px;
+    }
+
+    .name {
+      font-family: Arial;
+    }
+
+     .navigation {
+      background-color: #ddd;
+      width: 100%;
+      padding: 2px 5px;
+      font-family: Arial;
+    }
+
+    .navigation a {
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .navigation a:hover {
+      text-decoration: underline;
+    }
+
+    .site {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 5px 15px;
+    }
+
+    .hr {
+      border: none;
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-left: 4px solid #cc9;
+      padding-left: 15px;
+    }
+
+    .changelog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .changelog-item {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      padding: 15px 20px;
+    }
+
+    .changelog-date {
+      font-weight: bold;
+      color: #0078d7;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 5px;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    .footer {
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #ddd;
+      padding-bottom: 4px;
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    .changelog-text {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .changelog-text li {
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .site {
+       flex-direction: column;
+       text-align: center;
+       margin: 10px 0;
+      }
+
+      .changelog-date {
+        font-size: 14px;
+      }
+    .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+    padding: 5px 8px 5px 8px;
+    background-color: #cc9;
+  }
+
+  .navigation a:hover {
+    background-color: rgb(236, 190, 50);
+  }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    .footer {
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #ddd;
+      padding-bottom: 4px;
+
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: underline;
+    }
+  }
+  
+
+    @media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .body {
+    color: #ffffff;
+  }
+
+  .navigation, .footer {
+    background: #2a2a2a;
+  }
+
+  th {
+    background: #2d2a1a !important;
+    color: #1a1a1a;
+  }
+
+  .info {
+    background: #2d2a1a;
+    border-color: #7a6e3e;
+  }
+
+  td {
+    background: #252525;
+    border-color: #444;
+  }
+
+  small {
+    color: #ffffff;
+  }
+
+  .changelog-item {
+    background-color: #2a2a2a;
+  }
+
+  a {
+    color: #7a6e3e;
+  }
+
+  h2 {
+    background-color: #7a6e3e;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="navigation">
+  <a href="index.html"><small>Главная</small></a>
+  <a href="obnova.html"><small>Изменения</small></a> 
+  <a href="about.html"><small>О проекте</small></a>
+</div>
+
+
+<div class="site">
+  <img class="logo" src="icon.png" alt="Логотип">
+  <h1 class="name">Проводник</h1>
+</div>
+<hr class="hr">
+
+<div class="container">
+  <h2>📅 История изменений</h2>
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <div class="changelog-date">04.05.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Образ <strong><a href="win10LTSC.html">Windows 10 IoT LTSC</a></strong> (x64)</li>
+      </ul>
+    </div>
+
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <div class="changelog-date">29.04.2026</div>
+      <ul class="changelog-text">
+        <li>⬛ Добавлена темная тема для сайта</li>
+      </ul>
+    </div>
+
+ <div class="changelog-list">
+  <div class="changelog-item">
+      <div class="changelog-date">26.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Образ <strong><a href="win11.html">Windows 11 Russian</a></strong> (x64)</li>
+        <li>➕ Добавлен <a href="win11.html">MediaCreationTool</a> Для windows 11</li>
+        <li>📷 Скриншоты ОС</li>
+      </ul>
+    </div>
+
+    <div class="changelog-list">
+    <div class="changelog-item">
+      <div class="changelog-date">22.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Добавлен <strong><a href="win10.html">MediaCreationTool_22H2</a></strong></li>
+        <li>📋 Добавлена кнопка для копирования хеш-сумм</li>
+        <li>📱 Таблицы адаптированы под телефоны</li>
+      </ul>
+    </div>
+
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <div class="changelog-date">10.04.2026</div>
+      <ul class="changelog-text">
+        <li>📱 Адаптация сайта под мобильные устройста</li>
+      </ul>
+    </div>
+
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <div class="changelog-date">09.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Добавлен раздел <strong>win10LTSC</strong> (x64/x86)</li>
+        <li>🎨 Добавлен aside с новостями сайта</li>
+        <li>🧭 Улучшена навигация по сайту</li>
+        <li>📰 Создана страница «Изменения»</li>
+        <li>📄 Создана страница «О проекте»</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">04.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Добавлены образы <strong><a href="win7.html">Windows 7 Ultimate</a></strong> (x64/x86)</li>
+        <li>➕ Добавлены образы <strong><a href="win10.html">Windows 10</a></strong> (x64/x86)</li>
+        <li>🔧 Исправлены опечатки на сайте</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">24.03.2026</div>
+      <ul class="changelog-text">
+        <li>🚀 Запуск сайта «Проводник»</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+  <span>© 2026 Проводник. Все права защищены.</span><br>
+  <a href="index.html">Главная</a> | <a href="privacy.html">Политика конфиденциальности</a> | <a href="about.html">Об авторе</a> | <a href="obnova.html">История изменений</a>
+</div> 
+
+</body>
+</html>
