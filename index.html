@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Проводник — архив оригинальных ISO Windows</title>
+  <meta name="application-name" content="Проводник">
+  <meta name="apple-mobile-web-app-title" content="Проводник">
+  <link rel="icon" href="icon.png">
+  <meta name="google-site-verification" content="lRGEnYLdiHMdRj0VIrZp7iBPjc730gBP-7bJ-miI4FQ" />
+  <meta name="description" content="Оригинальные ISO образы Windows 7, 10, LTSC. Дистрибутивы MSDN без изменений, контрольные суммы.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Проводник",
+  "url": "https://winprovodnik.github.io",
+  "description": "Оригинальные ISO образы Windows 7, 10. Дистрибутивы MSDN без изменений, контрольные суммы.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://winprovodnik.github.io/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-top: -3px;
+    }
+
+    .name {
+      font-family: Arial;
+    }
+
+    .navigation {
+      background-color: #ddd;
+      width: 100%;
+      padding: 2px 5px;
+    }
+
+    .navigation a {
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .navigation a:hover {
+      text-decoration: underline;
+    }
+
+    .site {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 5px 15px;
+    }
+
+    .hr {
+      border: none;
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    .info {
+      background-color: #ffc;
+      padding: 10px;
+      border: 1px solid #cc9;
+      margin: 15px 20px;
+    }
+
+    .sidebar-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 0 20px;
+    }
+
+    .main-content {
+      flex: 3;
+      min-width: 250px;
+    }
+
+    .table {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      background-color: #ddd;
+      padding: 8px 5px;
+      text-align: left;
+      border: 1px solid #aaa;
+    }
+
+    td {
+      padding: 8px 7px;
+      border: 1px solid #ccc;
+      background-color: whitesmoke;
+    }
+
+    tr:hover {
+      background-color: #ffd;
+    }
+
+    i {
+      color: #c90;
+    }
+
+    a {
+      text-decoration: none;
+
+      color: #0066cc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    aside {
+      flex: 1;
+      min-width: 240px;
+      background: #f5f5f0;
+      border-left: 4px solid #cc9;
+      padding: 0 15px 15px 15px;
+      height: fit-content;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+    }
+
+    aside h3 {
+      background: #e0e0d0;
+      padding: 10px 12px;
+      margin: 0 -15px 15px -15px;
+      font-family: Arial;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .changelog-item {
+      margin-bottom: 18px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 12px;
+    }
+
+    .changelog-date {
+      font-weight: bold;
+      color: #0078d7;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .changelog-text {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .changelog-text li {
+      margin-bottom: 5px;
+    }
+
+    .footer {
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #ddd;
+      padding-bottom: 4px;
+
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: underline;
+
+    }
+
+    a {
+      text-decoration: none !important; 
+    }
+
+@media (max-width: 800px) {
+  .sidebar-container {
+    flex-direction: column;
+    margin: 0 10px;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 4px solid #cc9;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    min-width: 350px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+    padding: 5px 8px;
+    background-color: #cc9;
+  }
+
+  .site {
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .logo {
+    margin-bottom: 5px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .info {
+    margin: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer {
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  table {
+    min-width: 300px;
+  }
+
+  .navigation a {
+    font-size: 11px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .body {
+    color: #ffffff;
+  }
+
+  .navigation, .footer {
+    background: #2a2a2a;
+  }
+
+  th {
+    background: #2d2a1a !important;
+    color: #1a1a1a;
+  }
+
+  .info {
+    background: #2d2a1a;
+    border-color: #7a6e3e;
+  }
+
+  td {
+    background: #252525;
+    border-color: #444;
+  }
+
+  a {
+    color: #66b0ff;
+  }
+
+  h4 {
+    background-color: #7a6e3e !important;
+  }
+
+  th {
+      background-color: #7a6e3e !important;
+      color: #ffffff;
+    }
+
+  small {
+    color: #ffffff;
+  }
+
+  aside {
+    background-color: #161b22 !important;
+    border-left-color: #7a6e3e;
+  }
+
+  aside h3 {
+    background-color: #1e242c !important;
+    border-bottom-color: #30363d;
+    color: #e6edf3 !important;
+  }
+
+  .changelog-item {
+    border-bottom-color: #30363d;
+  }
+
+  .changelog-date {
+    color: #58a6ff;
+  }
+
+  .changelog-text,
+  .changelog-text li {
+    color: #e6edf3;
+  }
+
+  aside a {
+    color: #58a6ff;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="navigation">
+  <a href="index.html"><small>Главная</small></a>
+  <a href="obnova.html"><small>Изменения</small></a> 
+  <a href="about.html"><small>О проекте</small></a>
+</div>
+
+<div class="site">
+  <img class="logo" src="icon.png" alt="Логотип">
+  <h1 class="name">Проводник</h1>
+</div>
+<hr class="hr">
+<div class="contents">
+<div class="info">
+  Оригинальные ISO-образы Windows (MSDN). Хеш-суммы прилагаются
+ </div>
+<div class="sidebar-container">
+  <div class="main-content">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Имя файла</th>
+            <th>Кол-во файлов</th>
+            <th>Дата изменения</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="win11.html"><i>📂</i> win11/</a></td>
+            <td>2</td>
+            <td>26.04.2026 11:28</td>
+            <td>Дистрибутивы ОС</td>
+          </tr>
+          <tr>
+            <td><a href="win10.html"><i>📂</i> win10/</a></td>
+            <td>3</td>
+            <td>16.04.2026 18:06</td>
+            <td>Дистрибутивы ОС</td>
+          </tr>
+          <tr>
+            <td><a href="win7.html"><i>📂</i> win7/</a></td>
+            <td>2</td>
+            <td>10.04.2026 20:23</td>
+            <td>Дистрибутивы ОС</td>
+          </tr>
+          <tr>
+            <td><a href="win10LTSC.html"><i>📂</i> win10LTSC/</a></td>
+            <td>1</td>
+            <td>04.05.2026 22:22</td>
+            <td>Дистрибутивы ОС</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  <aside>
+    <h3>📅 Последние изменения</h3>
+    <div class="changelog-list">
+      <div class="changelog-item">
+      <div class="changelog-date">06.05.2026</div>
+      <ul class="changelog-text">
+        <li>⚙️ небольшое обновление JS</li>
+        <li>🧭 улучшение навигации</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">04.05.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Образ <strong><a href="win10LTSC.html">Windows 10 IoT LTSC</a></strong> (x64)</li>
+      </ul>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">29.04.2026</div>
+      <ul class="changelog-text">
+        <li>⬛ Добавлена тёмная тема</li>
+      </ul>
+      </div>
+
+     <div class="changelog-item">
+      <div class="changelog-date">26.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Образ <strong><a href="win11.html">Windows 11 Russian</a></strong> (x64)</li>
+        <li>➕ Добавлен <strong><a href="win11.html">MediaCreationTool</a></strong> Для windows 11</li>
+        <li>📷 Скриншоты ОС</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">22.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Добавлен <strong><a href="win10.html">MediaCreationTool_22H2</a></strong></li>
+        <li>📋 Добавлена кнопка для копирования хеш-сумм</li>
+        <li>📱 Таблицы адаптированы под телефоны</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">10.04.2026</div>
+      <ul class="changelog-text">
+        <li>📱 Адаптация сайта под мобильные устройста</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">09.04.2026</div>
+      <ul class="changelog-text">
+        <li>🎨 Добавлен aside с новостями сайта</li>
+        <li>🧭 Улучшена навигация по сайту</li>
+      </ul>
+    </div>
+
+    <div class="changelog-item">
+      <div class="changelog-date">04.04.2026</div>
+      <ul class="changelog-text">
+        <li>➕ Образы <strong><a href="win10.html">Windows 10 Russian</a></strong> (x64/x86)</li>
+        <li>➕ Образы <strong><a href="win7.html">Windows 7 Ultimate</a></strong> (x64/x86)</li>
+      </ul>
+    </div>
+    <p style="font-size: 11px; text-align: right; margin-top: 15px;">
+      <a href="obnova.html">📋 Вся история изменений →</a>
+    </p>
+  </aside>
+</div>
+</div>
+
+<div class="footer">
+  <span>© 2026 Проводник. Все права защищены.</span><br>
+  <a href="privacy.html">Политика конфиденциальности</a> | <a href="about.html">О проекте</a> | <a href="obnova.html">История изменений</a>
+</div>
+</body>
+</html>
