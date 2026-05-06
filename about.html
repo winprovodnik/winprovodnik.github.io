@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>О проекте — Проводник</title>
+  <link rel="icon" href="icon.png">
+  <meta name="description" content="Проект «Проводник» — архив оригинальных ISO-образов Windows с контрольными суммами.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-top: -3px;
+    }
+
+    .name {
+      font-family: Arial;
+    }
+
+    .navigation {
+      background-color: #ddd;
+      width: 100%;
+      padding: 2px 5px;
+    }
+
+    .navigation a {
+      color: #333;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .navigation a:hover {
+      text-decoration: underline;
+    }
+
+    .site {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 5px 15px;
+    }
+
+    .hr {
+      border: none;
+      background-color: #ccc;
+      height: 2px;
+      width: 100%;
+      margin: 5px 0;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #f5f5f5;
+      border-left: 4px solid #cc9;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .footer {
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #ddd;
+      padding-bottom: 4px;
+
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: underline;
+
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      border-left: 4px solid #cc9;
+      background: #f5f5f5;
+      padding-left: 15px;
+    }
+
+    h3 {
+      margin: 20px 0 10px 0;
+      font-size: 18px;
+    }
+
+    ul {
+      margin: 10px 0 10px 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    p {
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 800px) {
+      .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+    padding: 5px 8px 5px 8px;
+    background-color: #cc9;
+  }
+
+  .navigation a:hover {
+    background-color: rgb(236, 190, 50);
+  }
+
+  .site {
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .logo {
+    margin-bottom: 5px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .info {
+    margin: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    
+  }      
+    }
+
+   
+
+    @media (prefers-color-scheme: dark) {
+   body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .body {
+    color: #ffffff;
+  }
+
+  a {
+    color: #66b0ff;
+  }
+
+  h4 {
+    background-color: #7a6e3e !important;
+  }
+
+  th {
+      background-color: #7a6e3e !important;
+      color: #ffffff;
+    }
+
+  small {
+    color: #ffffff;
+  }
+
+  .navigation, .footer {
+    background: #2a2a2a;
+  }
+
+  .card {
+    background-color: #7a6e3e;
+  }
+
+  h2 {
+    background-color: #7a6e3e;
+  }
+
+}
+  </style>
+</head>
+<body>
+
+<div class="navigation">
+  <a href="index.html"><small>Главная</small></a>
+  <a href="obnova.html"><small>Изменения</small></a> 
+  <a href="about.html"><small>О проекте</small></a>
+</div>
+
+<div class="site">
+  <img class="logo" src="icon.png" alt="Логотип">
+  <h1 class="name">Проводник</h1>
+</div>
+<hr class="hr">
+
+<div class="container">
+  <h2>О проекте</h2>
+
+  <div class="card">
+    <p><strong>«Проводник»</strong> — архив оригинальных ISO-образов Windows.</p>
+    <p>Цель проекта — собрать в одном месте чистые дистрибутивы с указанием контрольных сумм для проверки оригинальности и целостности.</p>
+    <p>Никаких модификаций, встроенных активаторов или сторонних программ. Только оригинальные образы.</p>
+    Я только учусь вёрстке, буду рад видеть предложения по улучшению сайта. Спасибо, что пользуетесь сайтом!
+  </div>
+  <h3>Что есть сейчас</h3>
+  <ul>
+    <li>Windows 7 Ultimate SP1 (x64/x86)</li>
+    <li>Windows 10 (x64/x86) — Media Creation Tool</li>
+    <li>Windows 11</li>
+  </ul>
+
+  <h3>Что планируется</h3>
+  <ul>
+    <li>Windows 7 Pro</li>
+    <li>Windows 8.1</li>
+    <li>Старые windows</li>
+    <li>Инструкции по проверке хешей</li>
+    <li>Windows 10 LTSC (x64/x86)</li>
+  </ul>
+
+  <h3>Контакты</h3>
+  <ul>
+    <li>📧 Email: <a href="mailto:winprovodnik39@gmail.com">winprovodnik39@gmail.com</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  <span>© 2026 Проводник. Все права защищены.</span><br>
+  <a href="index.html">Главная</a> | <a href="privacy.html">Политика конфиденциальности</a> | <a href="about.html">О проекте</a> | <a href="obnova.html">История изменений</a>
+</div> 
+
+</body>
+</html>
