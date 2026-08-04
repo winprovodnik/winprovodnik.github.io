@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Как проверить хеш-сумму — Проводник</title>
+  <link rel="icon" href="icon.webp">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .code-block {
+      background: #fff;
+      border: 1px solid #808080;
+      padding: 8px;
+      font-family: monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+    }
+    .code-block code {
+      word-break: break-all;
+    }
+    .note {
+      background: #ffffcc;
+      border-left: 3px solid #cc9;
+      padding: 10px 15px;
+      margin: 15px 0;
+      font-size: 0.85rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .code-block {
+        background: #2a2a2a;
+        border-color: #555;
+        color: #e0e0e0;
+      }
+      .note {
+        background: #2d2a1a;
+        border-left-color: #7a6e3e;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="window">
+<div class="navigation">
+  <a href="index.html"><button>Главная</button></a>
+</div>
+</div>
+
+<div class="site">
+  <img class="logo" src="icon.webp" alt="Логотип">
+  <h2 class="name">Проводник</h2>
+</div>
+
+<div class="info">
+  <img src="icon/key_padlock-1.png"> Контрольные суммы (SHA-256, SHA-1, MD5) — это «отпечатки пальцев» файлов. Если хеш совпадает, файл оригинальный и не повреждён.
+</div>
+
+<div class="container">
+<div class="window" style="max-width: 800px; margin-left: 20px;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="icon/executable_script-0.png"> Windows — PowerShell (рекомендуемый способ)</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"><img src="icon/minimize.svg"></button>
+      <button aria-label="Maximize"><img src="icon/maximize.svg"></button>
+      <button aria-label="Close"><img src="icon/close.svg"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>1. Нажмите Win + R, введите <code>powershell</code>, нажмите Enter</p>
+    <img src="img/powershell.PNG" alt="powershell Windows" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%;">
+    <p>2. В новом окне вставьте команду, заменив путь к своему ISO. Снова нажмите Enter и немного подождите</p>
+    <div class="code-block">
+      <code>Get-FileHash -Path "C:\путь\к\файлу.iso" -Algorithm SHA256</code>
+      <button class="copy-btn" data-hash='Get-FileHash -Path "C:\путь\к\файлу.iso" -Algorithm SHA256'>Копировать</button>
+    </div>
+    <img src="img/winpowershell.PNG" style="max-width: 100%; margin-top: 10px;">
+    <small>Тот самый набор цифр и букв — хеш-сумма файла. В интернете можно будет найти оригинальные хеши нужного файла и сравнить с вашими.</small>
+  </div>
+</div>
+
+<div class="window" style="max-width: 800px; margin-left: 20px; margin-top: 20px;">
+  <div class="title-bar">
+    <div class="title-bar-text"><img src="icon/console_prompt-1.png"> Windows — CMD (если возникли проблемы с PowerShell)</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"><img src="icon/minimize.svg"></button>
+      <button aria-label="Maximize"><img src="icon/maximize.svg"></button>
+      <button aria-label="Close"><img src="icon/close.svg"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>1. Нажмите Win + R, введите <code>cmd</code>, нажмите Enter</p>
+    <img src="img/cmd.PNG" alt="Windows cmd" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%;">
+    <p>2. Всё то же самое, что и в PowerShell, только команда немного отличается:</p>
+    <div class="code-block">
+      <code>certutil -hashfile "C:\путь\к\файлу.iso" SHA256</code>
+      <button class="copy-btn" data-hash='certutil -hashfile "C:\путь\к\файлу.iso" SHA256'>Копировать</button>
+    </div>
+    <img src="img/wincmd.PNG" alt="Командная строка Windows cmd" style="max-width: 100%; margin-top: 10px;">
+  </div>
+</div>
+</div>
+
+<div class="window" style="margin-top: 20px; text-align: center; padding: 20px 20px;">
+  © 2026 Проводник. Все права защищены.<br>
+  <a href="index.html">Главная</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
